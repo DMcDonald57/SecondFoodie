@@ -1,12 +1,15 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app id="app">
+      <router-view/>
+  </v-app>
 </template>
+
+<script>
+
+export default {
+  name: 'app',
+};
+</script>
 
 <style>
 #app {
@@ -17,16 +20,10 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
-}
+/* html{
+  background-color: #ffebcd;
+  background-image: url("https://img.freepik.com/free-photo/chopping-board-surrounded-with-vegetables-eggs-rice-grains-desk_23-2148062361.jpg?w=2000");
+  background-size: cover;
+} */
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
