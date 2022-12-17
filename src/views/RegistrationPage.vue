@@ -1,28 +1,27 @@
 <template>
-    <div>
+    <v-form>
         <h1>Test Registration Page</h1>
-        <v-text-field
-        v-model="email"
-        />
-        <!-- <v-text-field
-        v-model="first_name"
-        />
-        <v-text-field
-        v-model="last_name"
-        />
-        <v-text-field
-        v-model="username"
-        /> -->
-        <v-text-field
-        v-model="password"
-        />
-
-
-        <v-btn @click="registration">Customer Registration</v-btn>
-
-        <!-- <v-btn @click="apiCall">Test API</v-btn> -->
-
-    </div>
+        <v-container>
+            <v-row>
+                <v-col cols="12" sm="6" md="3">
+                    <v-text-field label="Email" solo dense></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="3">
+                    <v-text-field label="First Name" solo dense></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="3">
+                    <v-text-field label="Last Name" solo dense></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="3">
+                    <v-text-field label="UserName" solo dense></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="3">
+                    <v-text-field label="Password" solo dense></v-text-field>
+                </v-col>
+            </v-row>
+            <v-btn @click="registration">Customer Registration</v-btn>
+        </v-container>
+    </v-form>
 </template>
 
 <script>
@@ -38,7 +37,6 @@ import axios from 'axios';
                 email : "",
                 first_name: "",
                 last_name: "",
-                image_url: "",
                 username: "",
                 password : "",
             }
@@ -74,5 +72,8 @@ methods: {
 </script>
 
 <style scoped>
+v-container {
+    
+}
 
 </style>
