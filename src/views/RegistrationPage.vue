@@ -19,7 +19,7 @@
                     <v-text-field v-model="password" label="Password" solo dense></v-text-field>
                 </v-col>
             </v-row>
-            <v-btn @click="registration">Customer Registration</v-btn>
+            <v-btn @click="C_registration">Customer Registration</v-btn>
         </div>
         <div>
             <h1>Restaurant Registration</h1>
@@ -34,7 +34,7 @@
                     <v-text-field v-model="bio" label="Slogan" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
-                    <v-text-field v-model="City" label="City" solo dense></v-text-field>
+                    <v-text-field v-model="city" label="City" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
                     <v-text-field v-model="email" label="Email" solo dense></v-text-field>
@@ -43,10 +43,10 @@
                     <v-text-field v-model="password" label="Password" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
-                    <v-text-field v-model="phoneNum" label="Phone Number" solo dense></v-text-field>
+                    <v-text-field v-model="phoneNum" label="Phone Number with Dashes" solo dense></v-text-field>
                 </v-col>
             </v-row>
-            <v-btn @click="registration">Restaurant Registration</v-btn>
+            <v-btn @click="R_registration">Restaurant Registration</v-btn>
         </div>
     </v-form>
 </template>
@@ -74,7 +74,7 @@ import axios from 'axios';
             }
         },
 methods: {
-    registration(){
+    C_registration(){
         axios.request({
             method : "POST",
             url : "https://foodierest.ml/api/client",
@@ -93,7 +93,29 @@ methods: {
         }).catch(() => {
             console.log("Error");
         })
-        }
+        },
+    R_registration(){
+        axios.request({
+            method : "POST",
+            url : "https://foodierest.ml/api/restaurant",
+            headers : {
+                'x-api-key' : this.apiKey,
+            },
+            data : {
+                name : this.name,
+                address : this.address,
+                bio : this.bio,
+                city : this.city,
+                email : this.email,
+                password : this.password,
+                phoneNum : this.phoneNum
+            }
+        }).then((response)=> {
+            console.log(response);
+        }).catch(() => {
+            console.log("Error");
+        })
+    }
     },
 }
 </script>
