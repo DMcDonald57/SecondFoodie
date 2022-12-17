@@ -4,10 +4,24 @@
         <v-text-field
         v-model="email"
         />
+        <!-- <v-text-field
+        v-model="first_name"
+        />
+        <v-text-field
+        v-model="last_name"
+        />
+        <v-text-field
+        v-model="username"
+        /> -->
         <v-text-field
         v-model="password"
         />
-        <v-btn @click="login">Log In</v-btn>
+
+
+        <v-btn @click="registration">Customer Registration</v-btn>
+
+        <!-- <v-btn @click="apiCall">Test API</v-btn> -->
+
     </div>
 </template>
 
@@ -22,7 +36,11 @@ import axios from 'axios';
                 apiKey : process.env.VUE_APP_API_KEY,
                 apiUrl : process.env.VUE_APP_API_URL,
                 email : "",
-                password : ""
+                first_name: "",
+                last_name: "",
+                image_url: "",
+                username: "",
+                password : "",
             }
         },
 methods: {
@@ -31,20 +49,21 @@ methods: {
     //     console.log(this.apiKey);
     //     console.log(this.apiUrl);
     // },
-    login(){
+    registration(){
         axios.request({
             method : "POST",
             url : "https://foodierest.ml/api/client",
-            Headers : {
-                apiKey : this.apiKey,
-                apiUrl : this.apiUrl
-                
+            headers : {
+                'x-api-key' : this.apiKey,
             },
             data : {
                 email : this.email,
+                first_name: this.first_name,
+                last_name: this.last_name,
+                username: this.username,
                 password : this.password
             }
-        }).then((response)=>{
+        }).then((response) => {
             console.log(response);
         }).catch(() => {
             console.log("Error");
