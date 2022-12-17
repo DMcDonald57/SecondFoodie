@@ -1,26 +1,26 @@
 <template>
     <v-form>
         <h1>Test Registration Page</h1>
-        <v-container>
+        <div>
             <v-row>
                 <v-col cols="12" sm="6" md="3">
-                    <v-text-field label="Email" solo dense></v-text-field>
+                    <v-text-field v-model="email" label="Email" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
-                    <v-text-field label="First Name" solo dense></v-text-field>
+                    <v-text-field v-model="firstName" label="First Name" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
-                    <v-text-field label="Last Name" solo dense></v-text-field>
+                    <v-text-field v-model="lastName" label="Last Name" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
-                    <v-text-field label="UserName" solo dense></v-text-field>
+                    <v-text-field v-model="username" label="UserName" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="3">
-                    <v-text-field label="Password" solo dense></v-text-field>
+                    <v-text-field v-model="password" label="Password" solo dense></v-text-field>
                 </v-col>
             </v-row>
             <v-btn @click="registration">Customer Registration</v-btn>
-        </v-container>
+        </div>
     </v-form>
 </template>
 
@@ -35,8 +35,8 @@ import axios from 'axios';
                 apiKey : process.env.VUE_APP_API_KEY,
                 apiUrl : process.env.VUE_APP_API_URL,
                 email : "",
-                first_name: "",
-                last_name: "",
+                firstName: "",
+                lastName: "",
                 username: "",
                 password : "",
             }
@@ -56,8 +56,8 @@ methods: {
             },
             data : {
                 email : this.email,
-                first_name: this.first_name,
-                last_name: this.last_name,
+                firstName: this.firstName,
+                lastName: this.lastName,
                 username: this.username,
                 password : this.password
             }
@@ -72,8 +72,5 @@ methods: {
 </script>
 
 <style scoped>
-v-container {
-    
-}
 
 </style>
