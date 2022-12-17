@@ -26,17 +26,19 @@ import axios from 'axios';
             }
         },
 methods: {
-    apiCall()  {
-        // Axios call
-        console.log(this.apiKey);
-        console.log(this.apiUrl);
-    },
+    // apiCall()  {
+    //     // Axios call
+    //     console.log(this.apiKey);
+    //     console.log(this.apiUrl);
+    // },
     login(){
         axios.request({
             method : "POST",
             url : "https://foodierest.ml/api/client",
             Headers : {
-                apiKey : process.env.VUE_APP_API_KEY
+                apiKey : this.apiKey,
+                apiUrl : this.apiUrl
+                
             },
             data : {
                 email : this.email,
