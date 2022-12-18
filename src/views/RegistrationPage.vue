@@ -20,6 +20,7 @@
                 </v-col>
             </v-row>
             <v-btn @click="C_registration">Customer Registration</v-btn>
+            <p>Already  registered? Log in Here</p>
         </div>
         <div>
             <h1>Restaurant Registration</h1>
@@ -122,11 +123,15 @@ methods: {
 
 <style scoped>
 
-h1 {
+html {
+    background-image: url("https://img.freepik.com/free-photo/chopping-board-surrounded-with-vegetables-eggs-rice-grains-desk_23-2148062361.jpg?w=2000");
+    background-size: cover;
+}
 
+
+h1 {
     margin-bottom: 5vh;
     margin-top: 5vh;
-
 }
 
 </style>

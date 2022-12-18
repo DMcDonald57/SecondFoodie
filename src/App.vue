@@ -20,10 +20,9 @@ export default {
   color: #2c3e50;
 }
 
-/* html{
-  background-color: #ffebcd;
+html {
   background-image: url("https://img.freepik.com/free-photo/chopping-board-surrounded-with-vegetables-eggs-rice-grains-desk_23-2148062361.jpg?w=2000");
   background-size: cover;
-} */
+}
 
 </style>
