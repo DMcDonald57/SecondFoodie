@@ -1,5 +1,6 @@
 <template>
     <v-form>
+        <pageTopper/>
         <h1>Customer Registration</h1>
         <div>
             <v-row>
@@ -20,7 +21,6 @@
                 </v-col>
             </v-row>
             <v-btn @click="C_registration">Customer Registration</v-btn>
-            <p>Already  registered? Log in Here</p>
         </div>
         <div>
             <h1>Restaurant Registration</h1>
@@ -54,9 +54,13 @@
 
 <script>
 import axios from 'axios';
+import pageTopper from '@/components/pageTopper';
 
     export default {
         name: "RegistrationPage",
+        compoonents: {
+            pageTopper
+        },
 
         data() {
             return{
@@ -122,11 +126,6 @@ methods: {
 </script>
 
 <style scoped>
-
-html {
-    background-image: url("https://img.freepik.com/free-photo/chopping-board-surrounded-with-vegetables-eggs-rice-grains-desk_23-2148062361.jpg?w=2000");
-    background-size: cover;
-}
 
 
 h1 {
