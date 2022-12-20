@@ -16,7 +16,7 @@
 
 img {
     height: 30vh;
-    width: 55vw
+    width: 70vw
 }
 
 </style>
