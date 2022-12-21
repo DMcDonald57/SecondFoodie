@@ -14,7 +14,7 @@
             If you are a new or returning restaurant owner, click the below link to log in, register or update
             your restaurant information and menu.  Welcome to the Foodie Family.
         </P>
-        <router-link to="/RegistrationPage"><h1> Restaurant Log in and information</h1></router-link>
+        <router-link to="/RestRegPage"><h1> Restaurant Log in and information</h1></router-link>
 
     </div>
     </template>
