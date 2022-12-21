@@ -57,7 +57,7 @@ import axios from 'axios';
 import pageTopper from '@/components/pageTopper';
 
     export default {
-        name: "RegistrationPage",
+        name: "UserRegPage",
         compoonents: {
             pageTopper
         },

@@ -1,38 +1,23 @@
 <template>
     <div>
         <pageTopper/>
-        <h2>about us</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Debitis alias autem sapiente beatae recusandae iure 
-            illum vitae quaerat, perspiciatis tenetur?</p>
+        <h1>NEW OR RETURNING CUSTOMERS</h1>
+        <span><P>
+            If you are a new or returning customer, click the below link to log in, register or update
+            your personal information.  Then enjoy what Foodie has to offer to you.
+        </P></span>
+        <router-link to="/UserRegPage"><h1> Customer Log in and information</h1></router-link>
 
-            <h2>Customer Login</h2>
-        <v-container>
-            <v-row align-items="center">
-                <v-col cols="12" sm="6" md="3">
-                    <v-text-field v-model="email" label="Email" solo dense></v-text-field>
-                </v-col>
-                <v-col cols="12" sm="6" md="3">
-                    <v-text-field v-model="firstName" label="First Name" solo dense></v-text-field>
-                </v-col>
-            </v-row>
-        </v-container>
-            <h2>Restaurant Login</h2>
-        <v-container>
-            <v-row>
-                <v-col cols="12" sm="6" md="3">
-                    <v-text-field v-model="name" label="Restaurant Name" solo dense></v-text-field>
-                </v-col>
-                <v-col cols="12" sm="6" md="3">
-                    <v-text-field v-model="address" label="Address" solo dense></v-text-field>
-                </v-col>
-            </v-row>
-        </v-container>
+        <h1>LOOKING TO JOIN THE FOODIE FAMILY?</h1>
 
-        <router-link to="/RegistrationPage">Not Registered?  Click here.</router-link>
+        <P>
+            If you are a new or returning restaurant owner, click the below link to log in, register or update
+            your restaurant information and menu.  Welcome to the Foodie Family.
+        </P>
+        <router-link to="/RegistrationPage"><h1> Restaurant Log in and information</h1></router-link>
 
     </div>
-</template>
+    </template>
 
 <script>
 import pageTopper from '@/components/pageTopper';
@@ -48,8 +33,22 @@ import pageTopper from '@/components/pageTopper';
 <style scoped>
 
 p {
+    border: 2px solid;
+    background-color: bisque;
+    font-size: 18pt;
     text-align: center;
-    margin: 0% 25% 0% 25%;
+    margin: 0% 15% 0% 15%;
+    color: black;
+    padding: 10px;
+}
+h1 {
+    border: 2px solid;
+    background-color: bisque;
+    margin: 0% 15% 0% 15%;
+    color: black;
+    padding: 10px;
+    font-family: cursive;
+    font-weight: bold;
 }
 
 </style>

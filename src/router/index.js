@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import RegistrationPage from '@/views/RegistrationPage';
+import UserRegPage from '@/views/UserRegPage';
 import welcomePage from '@/views/welcomePage';
 import pageTopper from '@/components/pageTopper'
 
@@ -14,8 +14,8 @@ const routes = [
     component: welcomePage
   },
   {
-    path: "/RegistrationPage",
-    component: RegistrationPage
+    path: "/UserRegPage",
+    component: UserRegPage
   },
   {
     path: "@/components/pageTopper",
