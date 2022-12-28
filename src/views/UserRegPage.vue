@@ -58,11 +58,6 @@ import pageTopper from '@/components/pageTopper';
                 lastName: "",
                 username: "",
                 password : "",
-                name : "",
-                address : "",
-                bio : "",
-                city : "",
-                phoneNum : ""
             }
         },
 methods: {

@@ -20,7 +20,7 @@
                     <v-text-field v-model="password" label="Password" solo dense></v-text-field>
                 </v-col> 
             </v-row>
-            <v-btn>Save Update</v-btn>
+            <v-btn @click="C_update">Save Update</v-btn>
             </div>
 
 
@@ -29,7 +29,7 @@
 
 <script>
 
-// import axios from 'axios';
+import axios from 'axios';
 import pageTopper from '@/components/pageTopper';
 
 
@@ -47,15 +47,33 @@ import pageTopper from '@/components/pageTopper';
                 lastName: "",
                 username: "",
                 password : "",
-                name : "",
-                address : "",
-                bio : "",
-                city : "",
-                phoneNum : ""
+                token : ""
             }
         },
-
+        methods: {
+    C_update (){
+        axios.request({
+            method : "PATCH",
+            url : "https://foodierest.ml/api/client",
+            headers : {
+                'x-api-key' : this.apiKey,
+                'token' : this.token
+            },
+            data : {
+                email : this.email,
+                firstName: this.firstName,
+                lastName: this.lastName,
+                username: this.username,
+                password : this.password
+            }
+        }).then((response) => {
+            console.log(response);
+        }).catch(() => {
+            console.log("Error");
+        })
+        },
     }
+}
 </script>
 
 <style scoped>
