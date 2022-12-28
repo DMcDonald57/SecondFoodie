@@ -10,6 +10,8 @@
                 </v-col>
             </v-row>
                     <v-btn @click="C_login">log in here</v-btn>
+                    <p>or</p>
+                    <v-btn>Update Profile</v-btn>
     
         <h1>or</h1>
 
@@ -64,7 +66,7 @@ import pageTopper from '@/components/pageTopper';
             }
         },
 methods: {
-    C_registration(){
+    C_registration (){
         axios.request({
             method : "POST",
             url : "https://foodierest.ml/api/client",
@@ -83,9 +85,8 @@ methods: {
         }).catch(() => {
             console.log("Error");
         })
-        }
         },
-        C_login(){
+        C_login (){
         axios.request({
             method : "POST",
             url : "https://foodierest.ml/api/client-login",
@@ -96,17 +97,17 @@ methods: {
                 email : this.email,
                 password : this.password
             }
-        }).then((response) => {
-            console.log(response);
-        }).catch(() => {
-            console.log("Error");
-        })
+            }).then((response) => {
+                console.log(response);
+            }).catch(() => {
+                console.log("Error");
+            })
+        },
         }
     }
 </script>
 
 <style scoped>
-
 
 h1 {
     margin-bottom: 5vh;
@@ -117,7 +118,7 @@ h1 {
 }
 
 .userlogin {
-    margin: 5% 15% 0% 15%; 
+    margin: 5% 15% 0% 15%;
 }
 
 </style>
