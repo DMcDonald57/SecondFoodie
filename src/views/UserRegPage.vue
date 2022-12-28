@@ -79,6 +79,7 @@ methods: {
             console.log(response);
         }).catch(() => {
             console.log("Error");
+            this.$router.push("/")
         })
         },
         C_login (){
@@ -98,7 +99,7 @@ methods: {
                 console.log("Error");
             })
         },
-        }
+        },
     }
 </script>
 
@@ -111,9 +112,10 @@ h1 {
 .userreg {
     margin: 5% 15% 5% 15%; 
 }
-
 .userlogin {
     margin: 5% 15% 0% 15%;
 }
-
+p {
+    margin-top: 20px;
+}
 </style>
