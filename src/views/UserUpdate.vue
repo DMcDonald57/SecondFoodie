@@ -22,8 +22,6 @@
             </v-row>
             <v-btn @click="C_update">Save Update</v-btn>
             </div>
-
-
     </main>
 </template>
 
@@ -31,9 +29,8 @@
 
 import axios from 'axios';
 import pageTopper from '@/components/pageTopper';
-
-
-    export default {
+    
+export default {
   components: { 
     pageTopper 
     },
@@ -51,11 +48,11 @@ import pageTopper from '@/components/pageTopper';
             }
         },
         methods: {
-    C_update (){
-        axios.request({
-            method : "PATCH",
-            url : "https://foodierest.ml/api/client",
-            headers : {
+            C_update (){
+                axios.request({
+                method : "PATCH",
+                url : "https://foodierest.ml/api/client",
+                headers : {
                 'x-api-key' : this.apiKey,
                 'token' : this.token
             },
@@ -69,9 +66,9 @@ import pageTopper from '@/components/pageTopper';
         }).then((response) => {
             console.log(response);
             // this.$router.push("restaurant page")
-
         }).catch(() => {
             console.log("Error");
+            alert("Update Failed.  Try Again")
         })
         },
     }
@@ -91,6 +88,4 @@ h1 {
 .userlogin {
     margin: 5% 15% 0% 15%;
 }
-
-
 </style>

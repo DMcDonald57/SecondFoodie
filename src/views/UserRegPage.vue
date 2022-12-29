@@ -34,7 +34,7 @@
                     <v-text-field v-model="password" label="Password" solo dense></v-text-field>
                 </v-col> 
             </v-row>
-            <v-btn @click="C_registration">Customer Registration</v-btn>
+            <v-btn @click="C_registration">Submit</v-btn>
         </div>
     </main>
 </template>
@@ -48,7 +48,7 @@ import pageTopper from '@/components/pageTopper';
         name: "UserRegPage",
         components: {
             pageTopper
-        },
+            },
 
         data() {
             return{
@@ -68,22 +68,21 @@ methods: {
             url : "https://foodierest.ml/api/client",
             headers : {
                 'x-api-key' : this.apiKey,
-            },
+                },
             data : {
                 email : this.email,
                 firstName: this.firstName,
                 lastName: this.lastName,
                 username: this.username,
                 password : this.password
-            }
-        }).then((response) => {
+                }
+            }).then((response) => {
             console.log(response);
             // this.$router.push("restaurant page")
-
-        }).catch(() => {
+            }).catch(() => {
             console.log("Error");
-            this.$router.push("/")
-        })
+            alert("Registration Failed.  Try Again")
+            })
         },
         C_login (){
         axios.request({
@@ -91,15 +90,17 @@ methods: {
             url : "https://foodierest.ml/api/client-login",
             headers : {
                 'x-api-key' : this.apiKey,
-            },
+                },
             data : {
                 email : this.email,
                 password : this.password
-            }
+                }
             }).then((response) => {
                 console.log(response);
+            // this.$router.push("restaurant page")
             }).catch(() => {
                 console.log("Error");
+                alert("Login Failed")
             })
         },
         C_update (){
@@ -108,16 +109,17 @@ methods: {
             url : "https://foodierest.ml/api/client-login",
             headers : {
                 'x-api-key' : this.apiKey,
-            },
+                },
             data : {
                 email : this.email,
                 password : this.password
-            }
+                }
             }).then((response) => {
                 console.log(response);
                 this.$router.push("./UserUpdate")
             }).catch(() => {
                 console.log("Error");
+                alert("Login Failed")
             })
         },
     },
