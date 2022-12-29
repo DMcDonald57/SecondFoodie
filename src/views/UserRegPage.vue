@@ -11,7 +11,7 @@
             </v-row>
                     <v-btn @click="C_login">log in here</v-btn>
                     <p>or</p>
-                    <v-btn>Update Profile</v-btn>
+                    <v-btn @click="C_update">Update Profile</v-btn>
     
         <h1>or</h1>
 
@@ -41,6 +41,7 @@
 
 <script>
 import axios from 'axios';
+// import cookies from 'vue-cookies';
 import pageTopper from '@/components/pageTopper';
 
     export default {
@@ -77,6 +78,8 @@ methods: {
             }
         }).then((response) => {
             console.log(response);
+            // this.$router.push("restaurant page")
+
         }).catch(() => {
             console.log("Error");
             this.$router.push("/")
@@ -99,8 +102,26 @@ methods: {
                 console.log("Error");
             })
         },
+        C_update (){
+        axios.request({
+            method : "POST",
+            url : "https://foodierest.ml/api/client-login",
+            headers : {
+                'x-api-key' : this.apiKey,
+            },
+            data : {
+                email : this.email,
+                password : this.password
+            }
+            }).then((response) => {
+                console.log(response);
+                this.$router.push("./UserUpdate")
+            }).catch(() => {
+                console.log("Error");
+            })
         },
-    }
+    },
+}
 </script>
 
 <style scoped>

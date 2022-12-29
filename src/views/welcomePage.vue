@@ -7,7 +7,7 @@
             If you are a new or returning customer, click the below link to log in, register or update
             your personal information.  Then enjoy what Foodie has to offer to you.
         </P>
-        <router-link to="/UserRegPage"><h1> Customer Log in and information</h1></router-link>
+        <router-link to="/UserRegPage"><h1> Customer Log in and Profile</h1></router-link>
         </div>
         
         <div class="lowernav">
@@ -17,7 +17,7 @@
             If you are a new or returning restaurant owner, click the below link to log in, register or update
             your restaurant information and menu.  Welcome to the Foodie Family.
         </P>
-        <router-link to="/RestRegPage"><h1> Restaurant Log in and information</h1></router-link>
+        <router-link to="/RestRegPage"><h1> Restaurant Log in and Profile</h1></router-link>
     </div>
     </main>
     </template>

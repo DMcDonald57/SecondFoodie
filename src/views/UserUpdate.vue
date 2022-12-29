@@ -68,6 +68,8 @@ import pageTopper from '@/components/pageTopper';
             }
         }).then((response) => {
             console.log(response);
+            // this.$router.push("restaurant page")
+
         }).catch(() => {
             console.log("Error");
         })
