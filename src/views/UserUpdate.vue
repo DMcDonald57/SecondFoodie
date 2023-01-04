@@ -63,7 +63,8 @@ export default {
                 firstName: this.firstName,
                 lastName: this.lastName,
                 username: this.username,
-                password : this.password
+                password : this.password,
+                token : this.token
             }
         }).then((response) => {
             console.log(response);
@@ -71,12 +72,12 @@ export default {
         }).catch(() => {
             console.log("Error");
             alert("Update Failed.  Try Again")
-        })
+            })
+            },
         },
-    },
-    mounted(){
+    mounted () {
         cookies.get("loginToken")
-    }
+    },
 }
 </script>
 
