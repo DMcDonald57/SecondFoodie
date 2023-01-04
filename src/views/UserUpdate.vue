@@ -56,7 +56,7 @@ export default {
                 url : "https://foodierest.ml/api/client",
                 headers : {
                 'x-api-key' : this.apiKey,
-                'token' : this.token
+                'token' : cookies.get("loginToken")
             },
             data : {
                 email : this.email,
@@ -64,20 +64,16 @@ export default {
                 lastName: this.lastName,
                 username: this.username,
                 password : this.password,
-                token : this.token
             }
         }).then((response) => {
             console.log(response);
-            this.$router.push("restaurant page")
+            this.$router.push("./RestaurantList")
         }).catch(() => {
             console.log("Error");
             alert("Update Failed.  Try Again")
             })
             },
         },
-    mounted () {
-        cookies.get("loginToken")
-    },
 }
 </script>
 
