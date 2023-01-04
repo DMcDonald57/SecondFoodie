@@ -5,6 +5,7 @@ import welcomePage from '@/views/welcomePage';
 import pageTopper from '@/components/pageTopper';
 import RestRegPage from '@/views/RestRegPage';
 import UserUpdate from '@/views/UserUpdate'
+import RestaurantList from '@/views/RestaurantList'
 
 
 Vue.use(VueRouter)
@@ -29,6 +30,10 @@ const routes = [
   {
     path: "/UserUpdate",
     component: UserUpdate
+  },
+  {
+    path: "/RestaurantList",
+    component: RestaurantList
   }
 ]
 

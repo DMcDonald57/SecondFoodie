@@ -41,7 +41,7 @@
 
 <script>
 import axios from 'axios';
-// import cookies from 'vue-cookies';
+import cookies from 'vue-cookies';
 import pageTopper from '@/components/pageTopper';
 
     export default {
@@ -59,6 +59,7 @@ import pageTopper from '@/components/pageTopper';
                 lastName: "",
                 username: "",
                 password : "",
+                token : ""
             }
         },
 methods: {
@@ -74,11 +75,13 @@ methods: {
                 firstName: this.firstName,
                 lastName: this.lastName,
                 username: this.username,
-                password : this.password
+                password : this.password,
+                token : this.token
                 }
             }).then((response) => {
             console.log(response);
-            // this.$router.push("restaurant page")
+            cookies.set("loginToken",response.data.token);
+            this.$router.push("./RestaurantList")
             }).catch(() => {
             console.log("Error");
             alert("Registration Failed.  Try Again")
@@ -97,7 +100,8 @@ methods: {
                 }
             }).then((response) => {
                 console.log(response);
-            // this.$router.push("restaurant page")
+                cookies.set("loginToken",response.data.token);
+            this.$router.push("./RestaurantList")
             }).catch(() => {
                 console.log("Error");
                 alert("Login Failed")
@@ -116,6 +120,7 @@ methods: {
                 }
             }).then((response) => {
                 console.log(response);
+                cookies.set("loginToken",response.data.token);
                 this.$router.push("./UserUpdate")
             }).catch(() => {
                 console.log("Error");

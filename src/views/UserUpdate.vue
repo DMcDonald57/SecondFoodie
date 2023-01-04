@@ -28,7 +28,9 @@
 <script>
 
 import axios from 'axios';
+import cookies from 'vue-cookies';
 import pageTopper from '@/components/pageTopper';
+
     
 export default {
   components: { 
@@ -39,7 +41,7 @@ export default {
             return{
                 apiKey : process.env.VUE_APP_API_KEY,
                 apiUrl : process.env.VUE_APP_API_URL,
-                email : "",
+                email: "",
                 firstName: "",
                 lastName: "",
                 username: "",
@@ -65,12 +67,15 @@ export default {
             }
         }).then((response) => {
             console.log(response);
-            // this.$router.push("restaurant page")
+            this.$router.push("restaurant page")
         }).catch(() => {
             console.log("Error");
             alert("Update Failed.  Try Again")
         })
         },
+    },
+    mounted(){
+        cookies.get("loginToken")
     }
 }
 </script>
