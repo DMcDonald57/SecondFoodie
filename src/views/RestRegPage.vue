@@ -47,6 +47,7 @@
 
 <script>
 import axios from 'axios';
+import cookies from 'vue-cookies';
 import pageTopper from '@/components/pageTopper';
 
     export default {
@@ -65,7 +66,8 @@ import pageTopper from '@/components/pageTopper';
                 address : "",
                 bio : "",
                 city : "",
-                phoneNum : ""
+                phoneNum : "",
+                token : ""
             }
         },
     methods: {
@@ -83,13 +85,16 @@ import pageTopper from '@/components/pageTopper';
                 city : this.city,
                 email : this.email,
                 password : this.password,
-                phoneNum : this.phoneNum
+                phoneNum : this.phoneNum,
+                token : this.token
             }
         }).then((response)=> {
             console.log(response);
+            cookies.set("restToken",response.data.token);
+            this.$router.push("./RestaurantList")
         }).catch(() => {
             console.log("Error");
-            alert("Registration Failed")
+            alert("Registration Failed. Try Again")
         })
     },
         R_login (){
@@ -105,7 +110,7 @@ import pageTopper from '@/components/pageTopper';
                 }
             }).then((response) => {
                 console.log(response);
-                // this.$router.push("restaurant page")
+                this.$router.push("./RestaurantList")
             }).catch(() => {
                 console.log("Error");
                 alert("Login Failed")
@@ -124,7 +129,8 @@ import pageTopper from '@/components/pageTopper';
                 }
             }).then((response) => {
                 console.log(response);
-                this.$router.push("./UserUpdate")
+                cookies.set("restToken",response.data.token);
+                this.$router.push("./RestUpdate")
             }).catch(() => {
                 console.log("Error");
                 alert("Login Failed")

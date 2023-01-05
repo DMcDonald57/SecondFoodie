@@ -86,8 +86,4 @@ h1 {
 .userupdate {
     margin: 5% 15% 5% 15%; 
 }
-
-.userlogin {
-    margin: 5% 15% 0% 15%;
-}
 </style>

@@ -4,8 +4,9 @@ import UserRegPage from '@/views/UserRegPage';
 import welcomePage from '@/views/welcomePage';
 import pageTopper from '@/components/pageTopper';
 import RestRegPage from '@/views/RestRegPage';
-import UserUpdate from '@/views/UserUpdate'
-import RestaurantList from '@/views/RestaurantList'
+import UserUpdate from '@/views/UserUpdate';
+import RestaurantList from '@/views/RestaurantList';
+import RestUpdate from '@/views/RestUpdate'
 
 
 Vue.use(VueRouter)
@@ -34,6 +35,10 @@ const routes = [
   {
     path: "/RestaurantList",
     component: RestaurantList
+  },
+  {
+    path: "/RestUpdate",
+    component: RestUpdate
   }
 ]
 
