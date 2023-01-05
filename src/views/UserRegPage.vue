@@ -2,19 +2,20 @@
     <main>
         <pageTopper/>
         <v-row class="userlogin">
+            <h4 id="valid">Enter a valid email address and password to log in or update your profile.</h4>
                 <v-col cols="12" sm="6" md="13">
                     <v-text-field v-model="email" label="Email" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="13">
                     <v-text-field v-model="password" label="Password" solo dense></v-text-field>
                 </v-col>
-            </v-row>
-                    <v-btn @click="C_login">log in here</v-btn>
-                    <p>or</p>
+            
+                <v-col>
+                    <v-btn @click="C_login">log in here</v-btn> <p>or</p>
                     <v-btn @click="C_update">Update Profile</v-btn>
+                </v-col>
+        </v-row>
     
-        <h1>or</h1>
-
         <h1>Customer Registration</h1>
         <div class="userreg">
             <v-row>
@@ -144,6 +145,11 @@ h1 {
     margin: 5% 15% 0% 15%;
 }
 p {
-    margin-top: 20px;
+margin: 5px;
+
+}
+#valid {
+    padding-bottom: 20px;
+    padding-left: 10px;
 }
 </style>

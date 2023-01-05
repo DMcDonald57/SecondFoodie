@@ -1,6 +1,8 @@
 <template>
     <div>
         <img src="@/assets/foodieBanner.png" alt="logo">
+        <router-link to="/"><h3> Return Home</h3></router-link>
+
     </div>
 </template>
 

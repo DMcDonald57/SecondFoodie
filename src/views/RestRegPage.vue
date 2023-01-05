@@ -2,6 +2,7 @@
     <main>
         <page-topper/>
         <v-row class="restlogin">
+            <h4 id="valid">Enter a valid email address and password to log in or update your profile.</h4>
                 <v-col cols="12" sm="6" md="13">
                     <v-text-field v-model="email" label="Email" solo dense></v-text-field>
                 </v-col>
@@ -155,6 +156,11 @@ h1 {
 p {
     margin-top: 20px;
 }
+#valid {
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
 
 
 </style>
