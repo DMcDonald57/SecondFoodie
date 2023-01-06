@@ -26,13 +26,16 @@
                     <v-text-field v-model="address" label="Address" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="13">
-                    <v-text-field v-model="bio" label="Slogan" solo dense></v-text-field>
-                </v-col>
-                <v-col cols="12" sm="6" md="13">
                     <v-text-field v-model="city" label="City" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="13">
+                    <v-text-field v-model="bio" label="Slogan" solo dense></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="13">
                     <v-text-field v-model="email" label="Email" solo dense></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="13">
+                    <v-text-field v-model="username" label="UserName" solo dense></v-text-field>
                 </v-col>
                 <v-col cols="12" sm="6" md="13">
                     <v-text-field v-model="password" label="Password" solo dense></v-text-field>
@@ -52,7 +55,7 @@ import cookies from 'vue-cookies';
 import pageTopper from '@/components/pageTopper';
 
     export default {
-        name: "RegRestPage",
+        name: "RestRegPage",
         components: {
             pageTopper
         },
@@ -60,13 +63,13 @@ import pageTopper from '@/components/pageTopper';
             return{
                 apiKey : process.env.VUE_APP_API_KEY,
                 apiUrl : process.env.VUE_APP_API_URL,
+                name : "",
+                address : "",
+                city : "",
+                bio : "",
                 email : "",
                 username: "",
                 password : "",
-                name : "",
-                address : "",
-                bio : "",
-                city : "",
                 phoneNum : "",
                 token : ""
             }
@@ -82,9 +85,10 @@ import pageTopper from '@/components/pageTopper';
             data : {
                 name : this.name,
                 address : this.address,
-                bio : this.bio,
                 city : this.city,
+                bio : this.bio,
                 email : this.email,
+                username : this.username,
                 password : this.password,
                 phoneNum : this.phoneNum,
                 token : this.token
@@ -111,6 +115,7 @@ import pageTopper from '@/components/pageTopper';
                 }
             }).then((response) => {
                 console.log(response);
+                cookies.set("restToken",response.data.token);
                 this.$router.push("./RestaurantList")
             }).catch(() => {
                 console.log("Error");

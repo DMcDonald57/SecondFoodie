@@ -3,7 +3,6 @@
         <page-topper/>
         <H1>This will be the Restaurtant list page</H1>
 
-        <router-link to="/"><h1> Home Page</h1></router-link>
 
     </main>
 </template>
