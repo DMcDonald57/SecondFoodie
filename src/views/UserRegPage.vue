@@ -102,6 +102,7 @@ methods: {
             }).then((response) => {
                 console.log(response);
                 cookies.set("loginToken",response.data.token);
+                this.$root.$emit('user_login',this.Login)
             this.$router.push("./RestaurantList")
             }).catch(() => {
                 console.log("Error");

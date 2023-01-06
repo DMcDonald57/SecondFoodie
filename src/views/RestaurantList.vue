@@ -48,8 +48,8 @@ import restaurantCard from'@/components/restaurantCard'
                 })
             },
             mounted(){
-                    this.restaurants
-            }
+                    this.$root.$on('user_login',this.restaurants);
+            },
         }
     }
 </script>
