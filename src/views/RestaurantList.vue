@@ -1,6 +1,8 @@
 <template>
     <div>
         <page-topper/>
+        <NavBar/>
+
             <div class="restaurantList">
                 <restaurantCard class="restaurantCard"
                 v-for="(rest,id) in restaurants"
@@ -18,13 +20,16 @@
 <script>
 import axios from 'axios';
 import pageTopper from '@/components/pageTopper';
-import restaurantCard from'@/components/restaurantCard'
+import restaurantCard from'@/components/restaurantCard';
+import NavBar from '@/components/NavBar'
+
 
     export default {
         name: "RestaurantList",
         components: {
             pageTopper,
-            restaurantCard
+            restaurantCard,
+            NavBar
         },
 
         data() {

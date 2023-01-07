@@ -1,6 +1,7 @@
 <template>
     <main>
         <page-topper/>
+        <NavBar/>
         <v-row class="restlogin">
             <h4 id="valid">Enter a valid email address and password to log in or update your profile.</h4>
                 <v-col cols="12" sm="6" md="13">
@@ -53,11 +54,13 @@
 import axios from 'axios';
 import cookies from 'vue-cookies';
 import pageTopper from '@/components/pageTopper';
+import NavBar from  '@/components/NavBar'
 
     export default {
         name: "RestRegPage",
         components: {
-            pageTopper
+            pageTopper,
+            NavBar
         },
         data() {
             return{

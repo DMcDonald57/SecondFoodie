@@ -28,7 +28,7 @@ import pageTopper from '@/components/pageTopper';
     export default {
         name : "welcomePage",
         components: {
-            pageTopper
+            pageTopper,
         }
     }
 </script>

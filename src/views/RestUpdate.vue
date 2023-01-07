@@ -1,6 +1,7 @@
 <template>
     <main>
         <page-topper/>
+        <NavBar/>
         <h1>Restaurant Profile Update</h1>
         <div class="restupdate">
             <v-row>
@@ -40,10 +41,12 @@
 import axios from 'axios';
 import cookies from 'vue-cookies';
 import pageTopper from '@/components/pageTopper.vue';
+import NavBar from '@/components/NavBar'
 
     export default {
   components: { 
-    pageTopper 
+    pageTopper,
+    NavBar
 },
 data() {
             return{

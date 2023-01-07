@@ -7,7 +7,9 @@ import RestRegPage from '@/views/RestRegPage';
 import UserUpdate from '@/views/UserUpdate';
 import RestaurantList from '@/views/RestaurantList';
 import RestUpdate from '@/views/RestUpdate';
-import restaurantCard from '@/components/restaurantCard'
+import restaurantCard from '@/components/restaurantCard';
+import NavBar from '@/components/NavBar'
+
 
 
 Vue.use(VueRouter)
@@ -44,6 +46,10 @@ const routes = [
   {
     path: "/components/restaurantCard",
     component: restaurantCard
+  },
+  {
+    path: "/components/NavBar",
+    component: NavBar
   }
 ]
 

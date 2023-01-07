@@ -1,6 +1,7 @@
 <template>
     <main>
         <page-topper/>
+        <NavBar/>
         <h1>Customer Profile Update</h1>
         <div class="userupdate">
             <v-row>
@@ -30,11 +31,13 @@
 import axios from 'axios';
 import cookies from 'vue-cookies';
 import pageTopper from '@/components/pageTopper';
+import NavBar from '@/components/NavBar'
 
     
 export default {
   components: { 
-    pageTopper 
+    pageTopper,
+    NavBar
     },
         
     data() {
