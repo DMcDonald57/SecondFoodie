@@ -63,12 +63,9 @@ import NavBar from '@/components/NavBar'
 </script>
 
 <style scoped>
-
 .restaurantList {
     display: grid;
     grid-template-columns: 1fr;
     margin: 10%
 }
-
-
 </style>
