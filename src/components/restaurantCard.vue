@@ -1,5 +1,6 @@
 <template>
     <div>
+        {{ name }}
     </div>
 </template>
 
@@ -7,6 +8,9 @@
 
     export default {
         name: "restaurantCard",
+        props: {
+            name: String 
+        },
     }
 </script>
 
