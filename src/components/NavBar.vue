@@ -19,17 +19,18 @@ import axios from 'axios'
         },
     methods: {
         logout() {
+            console.log("call");
         axios.request({
             method : "DELETE",
             url : "https://foodierest.ml/api/client-login",
             headers : {
                 'x-api-key' : this.apiKey,
+                'token': cookies.get("loginToken")
             },
-        }).then((response) => {
-            console.log(response);
+        }).then(() => {
+            console.log("success");
             cookies.remove("loginToken");
-            cookies.remove("restToken")
-            alert("Logout Successful")
+            alert("Logout Successful");
         }).catch(() => {
             console.log("error");
         })
