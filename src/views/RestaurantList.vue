@@ -1,16 +1,17 @@
 <template>
     <div>
         <page-topper/>
-        <H1>This will be the Restaurtant list page</H1>
-        <restaurantCard
-        v-for="(rest,index) in restaurants"
-        :key="index"
-        :name="rest.name"
-        :address="rest.address"
-        :city="rest.city"
-        :bio="rest.bio"
-        :email="rest.email"
-        :phoneNum="rest.phone"/>
+            <div class="restaurantList">
+                <restaurantCard class="restaurantCard"
+                v-for="(rest,id) in restaurants"
+                :key="id"
+                :name="rest.name"
+                :address="rest.address"
+                :city="rest.city"
+                :bio="rest.bio"
+                :email="rest.email"
+                :phoneNum="rest.phoneNum"/>
+            </div>
     </div>
 </template>
 
@@ -30,7 +31,6 @@ import restaurantCard from'@/components/restaurantCard'
             return {
             restaurants: [],
             apiKey : process.env.VUE_APP_API_KEY,
-
             }
         },
 
@@ -54,10 +54,16 @@ import restaurantCard from'@/components/restaurantCard'
         mounted(){
                 this.getRestaurant()
             },
-
     }
 </script>
 
 <style scoped>
+
+.restaurantList {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 10%
+}
+
 
 </style>
