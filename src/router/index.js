@@ -8,7 +8,8 @@ import UserUpdate from '@/views/UserUpdate';
 import RestaurantList from '@/views/RestaurantList';
 import RestUpdate from '@/views/RestUpdate';
 import restaurantCard from '@/components/restaurantCard';
-import NavBar from '@/components/NavBar'
+import NavBar from '@/components/NavBar';
+import MenuPage from '@/views/MenuPage'
 
 
 
@@ -50,7 +51,12 @@ const routes = [
   {
     path: "/components/NavBar",
     component: NavBar
+  },
+  {
+    path: "/MenuPage",
+    component: MenuPage
   }
+
 ]
 
 const router = new VueRouter({

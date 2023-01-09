@@ -5,6 +5,8 @@
         <h4>{{ bio }}</h4>
         <h4>{{ email }}</h4>
         <h4>{{ phoneNum }}</h4>
+        <router-link to="/MenuPage"><h4> Menu</h4></router-link>
+
     </div>
 </template>
 
